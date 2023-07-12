@@ -1,5 +1,5 @@
 
-package Controller;
+package model;
 
 
 public class Teacher {
@@ -8,6 +8,10 @@ public class Teacher {
     private String Email;
     private String Sex;
 
+    public Teacher() {
+    }
+
+    
     public Teacher(int Teacher_id, String Teacher_name, String Email, String Sex) {
         this.Teacher_id = Teacher_id;
         this.Teacher_name = Teacher_name;

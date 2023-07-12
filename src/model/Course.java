@@ -1,5 +1,5 @@
 
-package Controller;
+package model;
 
 
 public class Course {
@@ -7,6 +7,10 @@ public class Course {
     private  String Name;
     private int Teacher_id;
 
+    public Course() {
+    }
+
+    
     public Course(int Course_id, String Name, int Teacher_id) {
         this.Course_id = Course_id;
         this.Name = Name;

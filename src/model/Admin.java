@@ -1,11 +1,15 @@
 
-package Controller;
+package model;
 
 
 public class Admin {
     private int Admin_id;
     private String Admin_password;
 
+    public Admin() {
+    }
+
+    
     public Admin(int Admin_id, String Admin_password) {
         this.Admin_id = Admin_id;
         this.Admin_password = Admin_password;

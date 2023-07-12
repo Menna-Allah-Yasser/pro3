@@ -1,4 +1,4 @@
-package DB;
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -8,7 +8,7 @@ public class DB {
 
     private final String user = "root";
     private final String password = "password";
-    private final String url = "jdbc:mysql://localhost/CoursesCenter";
+    private final String url = "jdbc:mysql://localhost/Center";
 
     public Connection connect() throws SQLException {
         return DriverManager.getConnection(url, user, password);

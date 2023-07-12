@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DEO;
+package Service;
 
 /**
  *
  * @author HP
  */
-public class DEO {
+public class StudentService {
     
 }

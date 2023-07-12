@@ -1,4 +1,4 @@
-package Controller;
+package model;
 
 public class Student {
 
@@ -8,6 +8,10 @@ public class Student {
     private String Email;
     private String sex;
 
+    public Student() {
+    }
+
+    
     public Student(int Student_id, String FName, String LName, String Email, String sex) {
         this.Student_id = Student_id;
         this.FName = FName;
@@ -54,6 +58,11 @@ public class Student {
 
     public void setSex(String sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" + "Student_id=" + Student_id + ", FName=" + FName + ", LName=" + LName + ", Email=" + Email + ", sex=" + sex + '}';
     }
 
 }
