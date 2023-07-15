@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class TeacherService {
 
     TeacherDB tdb = new TeacherDB();
-    Scanner input=new Scanner(System.in);
-    
+    Scanner input = new Scanner(System.in);
+
     public void teacherLogin() {
         System.out.print("Teacher Id : ");
         int teacherId = input.nextInt();
@@ -16,7 +16,7 @@ public class TeacherService {
             System.out.println("Enter 1 : Show Courses");
             System.out.println("Enter 2 : set degree to student");
             int y = input.nextInt();
-            TeacherDB tdb=new TeacherDB();
+            TeacherDB tdb = new TeacherDB();
             if (y == 1) {
                 tdb.showCourses(teacherId);
             } else {

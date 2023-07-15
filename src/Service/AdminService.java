@@ -19,10 +19,6 @@ import model.Teacher;
 public class AdminService {
 
     Scanner input = new Scanner(System.in);
-    Connection connection;
-    String query;
-    PreparedStatement preparedStatement;
-    DB db = new DB();
     AdminDB adb = new AdminDB();
     CourseDB cdb = new CourseDB();
     StudentDB sdb = new StudentDB();
@@ -33,50 +29,8 @@ public class AdminService {
 
     }
 
-    public AdminService(int id, String pass) {
-
-        try {
-            connection = db.connect();
-            query = "insert into admin values (?,?)";
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, id);
-            preparedStatement.setString(2, pass);
-            preparedStatement.execute();
-            System.out.println("Admin " + id + " Added");
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-
-    public void avilableAdmin(Admin admin) {
-        try {
-            connection = db.connect();
-            ResultSet resultSet;
-            query = "select * from Admin where Admin_id=? and Admin_password=? ";
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setInt(1, admin.getAdmin_id());
-            preparedStatement.setString(2, admin.getAdmin_password());
-            resultSet = preparedStatement.executeQuery();
-            if (resultSet.next()) {
-                System.out.println("Enter 1 : Add");
-                System.out.println("Enter 2 : Delete");
-                int x = input.nextInt();
-                if (x == 1) {
-                    add();
-                } else if (x == 2) {
-                     delete();
-                } else {
-                    System.out.println("Invalid Number");
-                }
-            } else {
-                System.out.println("Incorrect Password , try again");
-            }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-
+    public AdminService(Admin admin) {
+        adb.adminLogin(admin);
     }
 
     public void add() {
@@ -98,6 +52,7 @@ public class AdminService {
 
         } else if (x == 2) { // insert Student
             Student s = new Student();
+
             System.out.print("Enter Student First name : ");
             s.setFName(input.next());
             System.out.print("Enter Student Last name : ");
@@ -162,7 +117,7 @@ public class AdminService {
 
             System.out.print("Enter Course id : ");
             c.setCourse_id(input.nextInt());
-             cdb.deleteCourse(c);
+            cdb.deleteCourse(c);
         }
     }
 }
