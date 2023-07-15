@@ -10,11 +10,10 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         int t = 1, memmber;
-
         AdminService adminService = new AdminService();
         Admin admin = new Admin();
+
         while (t >= 1) {
 
             System.out.println("Enter 1 : Admin");
@@ -22,20 +21,17 @@ public class Main {
             System.out.println("Enter 3 : Student");
             memmber = input.nextInt();
             if (memmber == 1) {
-                int id;
-                String pass;
                 System.out.print("Enter Your Id : ");
-                id = input.nextInt();
+                admin.setAdmin_id(input.nextInt());
                 System.out.print("Enter Your Password : ");
-                pass = input.next();
-                admin.setAdmin_id(id);
-                admin.setAdmin_password(pass);
-                adminService.avilableAdmin(admin);
+                admin.setAdmin_password(input.next());
+                AdminService as = new AdminService(admin);
+
             } else if (memmber == 2) {
-                TeacherService ts=new TeacherService();
+                TeacherService ts = new TeacherService();
                 ts.teacherLogin();
             } else if (memmber == 3) {
-                StudentService ss=new StudentService();
+                StudentService ss = new StudentService();
                 ss.studentLogin();
             } else {
                 System.out.println("Unkown input");
