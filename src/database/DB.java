@@ -8,7 +8,7 @@ public class DB {
 
     private final String user = "root";
     private final String password = "password";
-    private final String url = "jdbc:mysql://localhost/Center";
+    private final String url = "jdbc:mysql://localhost/CoursesCenter";
 
     public Connection connect() throws SQLException {
         return DriverManager.getConnection(url, user, password);

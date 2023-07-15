@@ -1,6 +1,8 @@
 package controller;
 
 import Service.AdminService;
+import Service.StudentService;
+import Service.TeacherService;
 import java.util.Scanner;
 import model.Admin;
 
@@ -28,11 +30,13 @@ public class Main {
                 pass = input.next();
                 admin.setAdmin_id(id);
                 admin.setAdmin_password(pass);
-                adminService.avilableAdmin(id , pass);
+                adminService.avilableAdmin(admin);
             } else if (memmber == 2) {
-
+                TeacherService ts=new TeacherService();
+                ts.teacherLogin();
             } else if (memmber == 3) {
-
+                StudentService ss=new StudentService();
+                ss.studentLogin();
             } else {
                 System.out.println("Unkown input");
             }

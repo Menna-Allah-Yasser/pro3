@@ -1,0 +1,43 @@
+== create database Center;
+
+== use center;
+
+==CREATE TABLE Admin(
+     Admin_id INT  AUTO_INCREMENT  ,
+     Admin_Password VARCHAR(20) NOT NULL,
+     PRIMARY KEY (Admin_id)
+     );
+
+==ALTER TABLE admin AUTO_INCREMENT = 1001;
+
+== 
+
+
+create table Admin(
+     Admin_id int NOT NULL AUTO_INCREMENT=1000 ,
+     Admin_password varchar(20) not null ,
+     primary key (admin_id) 
+);
+
+== create table StudentData (
+       Student_id int AUTO_INCREMENT , 
+        FName  varchar(20) not null ,
+        LName  varchar(20) not null ,
+        Email  varchar(20) not null ,
+        Sex    varchar(20) not null ,
+        primary key (Student_id) 
+);
+
+== ALTER TABLE StudentData AUTO_INCREMENT = 3001;
+
+
+== create table Student_Courese (
+       Student_id int  , 
+       Course_id  int  ,
+       Start_Date date ,
+       Degree float , 
+       price int(11),
+       primary key (Student_id , Course_id) ,
+       foreign KEY(Student_id) REFERENCES Studentdata(Student_id) ON DELETE Cascade ,
+       foreign KEY(Course_id) REFERENCES Coursedata(Course_id) ON DELETE Cascade
+);

@@ -4,12 +4,13 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/E:/java/pro3/src/Service/TeacherService.java</file>
-            <file>file:/E:/java/pro3/src/database/DB.java</file>
-            <file>file:/E:/java/pro3/src/model/Course.java</file>
+            <file>file:/E:/java/pro3/src/database/TeacherDB.java</file>
+            <file>file:/E:/java/pro3/src/database/StudentDB.java</file>
+            <file>file:/E:/java/pro3/src/database/AdminDB.java</file>
             <file>file:/E:/java/pro3/src/Service/StudentService.java</file>
+            <file>file:/E:/java/pro3/src/database/StudentCoursesDB.java</file>
+            <file>file:/E:/java/pro3/src/database/CourseDB.java</file>
             <file>file:/E:/java/pro3/src/controller/Main.java</file>
-            <file>file:/E:/java/pro3/src/model/Admin.java</file>
-            <file>file:/E:/java/pro3/src/Service/AdminService.java</file>
         </group>
     </open-files>
 </project-private>
